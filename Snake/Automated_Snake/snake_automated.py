@@ -94,6 +94,8 @@ while True:
         head.direction = "left"
     elif (head.direction == "down") and (head.xcor() >= 260):
         head.direction = "left"
+    elif (head.direction == "down") and (head.ycor() <= -280):
+        head.direction = "right"
     elif (head.direction == "down") and (head.xcor() <= -280):
         head.direction = "right"
     elif ((head.xcor() >= 260 and head.direction == "right") or (head.xcor() <= -280 and head.direction == "left")) and head.ycor() >= -260 and head.direction != "up":
@@ -108,7 +110,7 @@ while True:
         y = random.randint(-280, 280)
         food.goto(x, y)
 
-        # add a new_segment    
+        # add a new_segment
         new_segment = turtle.Turtle()
         new_segment.speed(0)
         new_segment.shape("square")
